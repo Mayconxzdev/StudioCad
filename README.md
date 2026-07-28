@@ -1,4 +1,4 @@
-# VesperStudio — estudo de caso de engenharia para projetos industriais
+# StudioCad — estudo de caso de engenharia para projetos industriais
 
 > Edição pública e sanitizada de um projeto de estação visual para decisões técnicas.
 > **Não inclui documentos, modelos CAD, NAS, IPs, credenciais ou dados de qualquer empresa.**
@@ -7,11 +7,17 @@
 
 ![Fluxo do produto](docs/assets/visual-project-workflow.svg)
 
+## Visão do produto
+
+![Reconstrução visual sanitizada da tela de revisão](docs/assets/studiocad-sanitized-project-review.png)
+
+> Reconstrução visual sanitizada a partir de um fluxo real validado localmente. A composição, os estados e o padrão de decisão foram preservados; marcas, arquivos, pessoas, datas, documentos e quaisquer dados de terceiros foram substituídos por conteúdo demonstrativo. Não é uma captura de tela de cliente nem uma fonte técnica real.
+
 ## Por que este projeto existe
 
 Em fluxos industriais, informações importantes costumam ficar distribuídas entre desenhos, PDFs, imagens, CADs e arquivos compactados. O problema não é apenas abrir arquivos: é permitir que alguém entenda o equipamento, compare evidências e tome uma decisão sem transformar uma referência incompleta em uma apresentação enganosa.
 
-O VesperStudio foi pensado como uma estação visual de projetos que separa claramente:
+O StudioCad foi pensado como uma estação visual de projetos que separa claramente:
 
 - **fonte histórica** — preservada e somente leitura;
 - **projeto em uso** — decisões, responsáveis e evidências locais;
@@ -38,7 +44,8 @@ Este é um **portfolio edition**, não uma cópia do sistema operacional da empr
 - uma função de redação de manifestos para exportação pública;
 - testes reproduzíveis com fixtures sintéticas;
 - documentação de arquitetura, limites e estratégia de validação;
-- CI no GitHub Actions.
+- CI no GitHub Actions;
+- uma reconstrução visual sanitizada para tornar a experiência avaliável sem expor o ambiente original.
 
 O que foi propositalmente removido:
 

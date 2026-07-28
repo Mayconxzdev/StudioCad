@@ -1,8 +1,8 @@
 {
-  "name": "vesperstudio-portfolio-edition",
+  "name": "studiocad-portfolio-edition",
   "version": "1.0.0",
   "private": false,
-  "description": "Sanitized engineering case study: safe technical package inspection and public-manifest redaction.",
+  "description": "StudioCad: sanitized engineering case study for safe technical package inspection and public-manifest redaction.",
   "license": "MIT",
   "author": "Maycon Ferreira <mayconxz00dev@gmail.com>",
   "engines": {

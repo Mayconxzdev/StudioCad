@@ -13,6 +13,10 @@ Este repositório documenta padrões de engenharia. Ele não distribui dados, ar
 - tokens, chaves, certificados, senhas e credenciais;
 - screenshots que exponham conteúdo técnico ou identidade de terceiros.
 
+## Imagens de portfólio
+
+Quando uma tela real precisa comunicar a experiência do produto, a versão pública usa uma **reconstrução visual sanitizada**. Ela preserva a hierarquia e os estados de UX, mas substitui por conteúdo demonstrativo qualquer marca, desenho, arquivo, pessoa, data, código, caminho ou dado operacional. A imagem não é prova de fonte técnica nem captura de tela de cliente.
+
 ## Controles demonstrados
 
 - inventário de ZIP/TAR/JSON sem execução;
