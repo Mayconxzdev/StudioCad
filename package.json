@@ -9,7 +9,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test tests/**/*.test.cjs",
+    "test": "node --test tests/safe-package-inspector.test.cjs tests/public-manifest.test.cjs",
     "test:inspector": "node --test tests/safe-package-inspector.test.cjs",
     "test:redaction": "node --test tests/public-manifest.test.cjs"
   }
