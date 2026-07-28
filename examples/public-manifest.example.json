@@ -1,0 +1,14 @@
+{
+  "schema": "portfolio-public-manifest/v1",
+  "project": {
+    "id": "demo-industrial-fan-001",
+    "sourceType": "technical-reference",
+    "sourceHash": "d6ef0ca970efcfe0b40ce34ee15dd68f6fa1f85a84de451fc745c144f193cc45",
+    "visualStatus": "human-review-required"
+  },
+  "limitations": [
+    "No real CAD, drawing, customer or network location is included.",
+    "Visual approval is not engineering validation.",
+    "Mechanical motion requires a separately confirmed profile."
+  ]
+}

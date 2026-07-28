@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Fluxo sanitizado de uma estação visual de projetos</title>
+  <desc id="desc">Fonte técnica, índice local, revisão humana e apresentação somente após aprovação.</desc>
+  <rect width="1200" height="360" fill="#071a2f" rx="24"/>
+  <text x="58" y="70" font-family="Arial, sans-serif" font-size="32" fill="#f8fafc" font-weight="700">Da fonte técnica à decisão visual responsável</text>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    <rect x="58" y="136" width="205" height="116" rx="16" fill="#163755"/><text x="82" y="181" fill="#f8fafc">Fonte técnica</text><text x="82" y="211" fill="#b8d3e9" font-size="15" font-weight="400">PDF, imagem ou CAD</text>
+    <rect x="322" y="136" width="205" height="116" rx="16" fill="#163755"/><text x="351" y="181" fill="#f8fafc">Índice local</text><text x="351" y="211" fill="#b8d3e9" font-size="15" font-weight="400">hash e metadados</text>
+    <rect x="586" y="136" width="245" height="116" rx="16" fill="#dca411"/><text x="615" y="181" fill="#08192c">Revisão humana</text><text x="615" y="211" fill="#23354a" font-size="15" font-weight="400">desenho × visualização</text>
+    <rect x="890" y="136" width="252" height="116" rx="16" fill="#1d8767"/><text x="920" y="181" fill="#f8fafc">Apresentação</text><text x="920" y="211" fill="#d4f5ea" font-size="15" font-weight="400">apenas se aprovada</text>
+  </g>
+  <g stroke="#dca411" stroke-width="5" fill="none"><path d="M263 194H314"/><path d="M527 194H578"/><path d="M831 194H882"/></g>
+  <g fill="#dca411"><path d="M306 186l16 8-16 8z"/><path d="M570 186l16 8-16 8z"/><path d="M874 186l16 8-16 8z"/></g>
+  <text x="58" y="310" font-family="Arial, sans-serif" font-size="16" fill="#b8d3e9">Nenhuma visualização genérica substitui uma fonte ausente. Nenhuma aprovação visual substitui validação de engenharia.</text>
+</svg>
