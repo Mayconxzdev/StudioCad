@@ -3,8 +3,7 @@
 > Edição pública e sanitizada de um projeto de estação visual para decisões técnicas.
 > **Não inclui documentos, modelos CAD, NAS, IPs, credenciais ou dados de qualquer empresa.**
 
-[![CI](https://github.com/Mayconxzdev/PropostaComercial/actions/workflows/ci.yml/badge.svg)](https://github.com/Mayconxzdev/PropostaComercial/actions/workflows/ci.yml)
-
+[![CI](https://github.com/Mayconxzdev/StudioCad/actions/workflows/ci.yml/badge.svg)](https://github.com/Mayconxzdev/StudioCad/actions/workflows/ci.yml)
 ![Fluxo do produto](docs/assets/visual-project-workflow.svg)
 
 ## Visão do produto
@@ -12,6 +11,14 @@
 ![Reconstrução visual sanitizada da tela de revisão](docs/assets/studiocad-sanitized-project-review.png)
 
 > Reconstrução visual sanitizada a partir de um fluxo real validado localmente. A composição, os estados e o padrão de decisão foram preservados; marcas, arquivos, pessoas, datas, documentos e quaisquer dados de terceiros foram substituídos por conteúdo demonstrativo. Não é uma captura de tela de cliente nem uma fonte técnica real.
+
+### Uso interno e assistência por IA
+
+A versão privada está funcional e é utilizada pelo gestor da empresa para visualizar projetos e produzir estudos e desenhos visuais assistidos por IA.
+
+A camada de IA utiliza modelos locais e remotos por meio de **Ollama, Hermes e OpenRouter**, com fallback entre provedores quando necessário. A indisponibilidade de um modelo não deve bloquear as funções principais de organização, conversão e visualização.
+
+As saídas geradas por IA são tratadas como apoio conceitual e visual. Elas não substituem CAD de fabricação, cálculo de engenharia ou aprovação técnica. Qualquer resultado relevante exige revisão humana antes de ser utilizado ou apresentado. 
 
 ## Por que este projeto existe
 
@@ -35,6 +42,12 @@ O StudioCad foi pensado como uma estação visual de projetos que separa clarame
 | Animação | Movimento só é habilitado quando existe perfil confirmado de componente, eixo, pivô, limites e responsável. |
 | Vídeo | O pipeline bloqueia apresentação quando a fonte/seleção visual não foi aprovada. Arquivo MP4 existente não equivale a homologação cinematográfica. |
 | Privacidade | Caminhos internos, endereços de rede, usuários, documentos e dados comerciais não entram na versão pública. |
+
+### Pipeline privado de conversão
+
+A versão operacional utiliza uma cadeia de conversão com **FreeCAD, Blender e Assimp**, aplicando fallback conforme o formato, a estrutura e a qualidade do arquivo recebido.
+
+A edição pública não distribui esses executáveis, arquivos técnicos ou integrações empresariais. Ela preserva os princípios de origem verificável, hash, inspeção segura, aprovação humana e bloqueio de apresentações sem fonte adequada.
 
 ## O que está neste repositório
 
