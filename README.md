@@ -43,12 +43,6 @@ O StudioCad foi pensado como uma estação visual de projetos que separa clarame
 | Vídeo | O pipeline bloqueia apresentação quando a fonte/seleção visual não foi aprovada. Arquivo MP4 existente não equivale a homologação cinematográfica. |
 | Privacidade | Caminhos internos, endereços de rede, usuários, documentos e dados comerciais não entram na versão pública. |
 
-### Pipeline privado de conversão
-
-A versão operacional utiliza uma cadeia de conversão com **FreeCAD, Blender e Assimp**, aplicando fallback conforme o formato, a estrutura e a qualidade do arquivo recebido.
-
-A edição pública não distribui esses executáveis, arquivos técnicos ou integrações empresariais. Ela preserva os princípios de origem verificável, hash, inspeção segura, aprovação humana e bloqueio de apresentações sem fonte adequada.
-
 ## O que está neste repositório
 
 Este é um **portfolio edition**, não uma cópia do sistema operacional da empresa. Ele contém:
@@ -81,6 +75,11 @@ flowchart LR
   F -->|"aprovada"| G["Apresentação\ncâmera e vídeo"]
   F -->|"pendente ou reprovada"| H["Bloqueio honesto\nsem vídeo ou movimento"]
 ```
+### Pipeline privado de conversão
+
+A versão operacional utiliza uma cadeia de conversão com **FreeCAD, Blender e Assimp**, aplicando fallback conforme o formato, a estrutura e a qualidade do arquivo recebido.
+
+A edição pública não distribui esses executáveis, arquivos técnicos ou integrações empresariais. Ela preserva os princípios de origem verificável, hash, inspeção segura, aprovação humana e bloqueio de apresentações sem fonte adequada.
 
 Leia [docs/architecture.md](docs/architecture.md), [docs/privacy-and-security.md](docs/privacy-and-security.md) e [docs/validation.md](docs/validation.md) para entender as decisões, limites e critérios de qualidade.
 
