@@ -1,68 +1,68 @@
-# StudioCad — estudo de caso de engenharia para projetos industriais
+# StudioCad — estação visual para projetos industriais
 
-> Edição pública e sanitizada de um projeto de estação visual para decisões técnicas.
+> Edição pública e sanitizada de um projeto que desenvolvi para organizar referências técnicas, visualizar arquivos e apoiar decisões visuais.
 > **Não inclui documentos, modelos CAD, NAS, IPs, credenciais ou dados de qualquer empresa.**
 
 [![CI](https://github.com/Mayconxzdev/StudioCad/actions/workflows/ci.yml/badge.svg)](https://github.com/Mayconxzdev/StudioCad/actions/workflows/ci.yml)
 ![Fluxo do produto](docs/assets/visual-project-workflow.svg)
 
-## Visão do produto
+## Visão geral
 
 ![Reconstrução visual sanitizada da tela de revisão](docs/assets/studiocad-sanitized-project-review.png)
 
-> Reconstrução visual sanitizada a partir de um fluxo real validado localmente. A composição, os estados e o padrão de decisão foram preservados; marcas, arquivos, pessoas, datas, documentos e quaisquer dados de terceiros foram substituídos por conteúdo demonstrativo. Não é uma captura de tela de cliente nem uma fonte técnica real.
+A imagem acima é uma reconstrução sanitizada de um fluxo que validei localmente. Mantive a estrutura, os estados e o padrão de decisão, mas substituí marcas, arquivos, pessoas, datas e documentos por conteúdo fictício. Não é uma captura de cliente nem uma fonte técnica real.
 
-### Uso interno e assistência por IA
+A versão privada está funcional e é utilizada pelo gestor da empresa para visualizar projetos e produzir estudos e desenhos visuais com apoio de IA.
 
-A versão privada está funcional e é utilizada pelo gestor da empresa para visualizar projetos e produzir estudos e desenhos visuais assistidos por IA.
+## Problema que trabalhei
 
-A camada de IA utiliza modelos locais e remotos por meio de **Ollama, Hermes e OpenRouter**, com fallback entre provedores quando necessário. A indisponibilidade de um modelo não deve bloquear as funções principais de organização, conversão e visualização.
+Em projetos industriais, informações importantes ficam distribuídas entre desenhos, PDFs, imagens, arquivos CAD e pacotes compactados. O desafio não é apenas abrir esses arquivos: é manter a origem, comparar referências e impedir que uma visualização incompleta seja tratada como desenho de fabricação ou validação de engenharia.
 
-As saídas geradas por IA são tratadas como apoio conceitual e visual. Elas não substituem CAD de fabricação, cálculo de engenharia ou aprovação técnica. Qualquer resultado relevante exige revisão humana antes de ser utilizado ou apresentado. 
+Por isso, organizei o fluxo em quatro partes:
 
-## Por que este projeto existe
+- **fonte histórica:** preservada e somente leitura;
+- **projeto em uso:** decisões, responsáveis e arquivos selecionados;
+- **visualização derivada:** identificada como conversão ou estudo visual;
+- **aprovação humana:** obrigatória antes de apresentação, vídeo ou movimento mecânico.
 
-Em fluxos industriais, informações importantes costumam ficar distribuídas entre desenhos, PDFs, imagens, CADs e arquivos compactados. O problema não é apenas abrir arquivos: é permitir que alguém entenda o equipamento, compare evidências e tome uma decisão sem transformar uma referência incompleta em uma apresentação enganosa.
+## IA e conversão de arquivos
 
-O StudioCad foi pensado como uma estação visual de projetos que separa claramente:
+A camada de IA utiliza modelos locais e remotos por meio de **Ollama, Hermes e OpenRouter**, com fallback quando necessário. A indisponibilidade de um modelo não bloqueia as funções principais de organização, conversão e visualização.
 
-- **fonte histórica** — preservada e somente leitura;
-- **projeto em uso** — decisões, responsáveis e evidências locais;
-- **visualização derivada** — nunca confundida com CAD de fabricação;
-- **aprovação humana** — obrigatória antes de vídeo ou movimento mecânico;
-- **dados públicos de portfólio** — sanitizados e demonstrativos.
+As saídas de IA servem como apoio conceitual e visual. Elas não substituem CAD de fabricação, cálculo de engenharia ou aprovação técnica.
 
-## Destaques técnicos
+Na versão privada, a conversão usa **FreeCAD, Blender e Assimp**, escolhendo alternativas conforme o formato e a estrutura do arquivo. A edição pública não distribui executáveis, arquivos técnicos ou integrações empresariais.
 
-| Tema | Decisão de engenharia |
+## Decisões técnicas
+
+| Tema | Como tratei |
 |---|---|
-| Fontes reais | A origem e o hash acompanham a visualização derivada. Nenhuma geometria genérica substitui CAD ausente. |
-| Segurança de arquivos | ZIP, TAR e JSON são inventariados sem executar scripts, macros ou conteúdo recebido. Caminhos inseguros, entradas especiais, criptografia e compressão suspeita são rejeitados. |
-| Decisão visual | A aprovação compara desenho × visualização e registra responsável/evidência; ela não é apresentada como validação de engenharia. |
-| Animação | Movimento só é habilitado quando existe perfil confirmado de componente, eixo, pivô, limites e responsável. |
-| Vídeo | O pipeline bloqueia apresentação quando a fonte/seleção visual não foi aprovada. Arquivo MP4 existente não equivale a homologação cinematográfica. |
-| Privacidade | Caminhos internos, endereços de rede, usuários, documentos e dados comerciais não entram na versão pública. |
+| Origem dos arquivos | A fonte e o hash acompanham cada visualização derivada. Geometria genérica não substitui CAD ausente. |
+| Pacotes recebidos | ZIP, TAR e JSON são inventariados sem executar scripts, macros ou conteúdo recebido. |
+| Arquivos suspeitos | Path traversal, entradas especiais, criptografia e compressão anormal são rejeitados. |
+| Revisão visual | A comparação desenho × visualização registra responsável e decisão, sem ser apresentada como validação de engenharia. |
+| Movimento | Só é habilitado quando existem componente, eixo, pivô, limites e responsável confirmados. |
+| Vídeo | A apresentação fica bloqueada quando a fonte e a seleção visual não foram aprovadas. |
+| Privacidade | Caminhos internos, endereços de rede, usuários, documentos e dados comerciais ficam fora da versão pública. |
 
-## O que está neste repositório
+## Conteúdo desta edição pública
 
-Este é um **portfolio edition**, não uma cópia do sistema operacional da empresa. Ele contém:
-
-- uma implementação Node.js independente de inventário seguro de ZIP/TAR/JSON;
-- uma função de redação de manifestos para exportação pública;
-- testes reproduzíveis com fixtures sintéticas;
-- documentação de arquitetura, limites e estratégia de validação;
+- implementação Node.js para inventário seguro de ZIP, TAR e JSON;
+- redação de manifestos para exportação pública;
+- testes com arquivos sintéticos;
+- documentação de arquitetura, privacidade e limites;
 - CI no GitHub Actions;
-- uma reconstrução visual sanitizada para tornar a experiência avaliável sem expor o ambiente original.
+- reconstrução visual sanitizada do fluxo de revisão.
 
-O que foi propositalmente removido:
+Foram removidos:
 
-- arquivos CAD, desenhos, PDFs e fotos reais;
+- CADs, desenhos, PDFs e fotos reais;
 - nomes de clientes, projetos, pessoas e produtos internos;
-- endereço/IP do NAS, caminhos locais e de rede;
+- endereços do NAS, caminhos locais e de rede;
 - banco de índice, logs operacionais, cache e instaladores;
-- credenciais, certificados e qualquer segredo.
+- credenciais, certificados e segredos.
 
-## Arquitetura do produto real, em alto nível
+## Arquitetura em alto nível
 
 ```mermaid
 flowchart LR
@@ -73,15 +73,10 @@ flowchart LR
   D --> F{"Revisão humana\ncom evidência"}
   E --> F
   F -->|"aprovada"| G["Apresentação\ncâmera e vídeo"]
-  F -->|"pendente ou reprovada"| H["Bloqueio honesto\nsem vídeo ou movimento"]
+  F -->|"pendente ou reprovada"| H["Bloqueio\nsem vídeo ou movimento"]
 ```
-### Pipeline privado de conversão
 
-A versão operacional utiliza uma cadeia de conversão com **FreeCAD, Blender e Assimp**, aplicando fallback conforme o formato, a estrutura e a qualidade do arquivo recebido.
-
-A edição pública não distribui esses executáveis, arquivos técnicos ou integrações empresariais. Ela preserva os princípios de origem verificável, hash, inspeção segura, aprovação humana e bloqueio de apresentações sem fonte adequada.
-
-Leia [docs/architecture.md](docs/architecture.md), [docs/privacy-and-security.md](docs/privacy-and-security.md) e [docs/validation.md](docs/validation.md) para entender as decisões, limites e critérios de qualidade.
+Leia [docs/architecture.md](docs/architecture.md), [docs/privacy-and-security.md](docs/privacy-and-security.md) e [docs/validation.md](docs/validation.md) para os detalhes.
 
 ## Executar a edição pública
 
@@ -107,32 +102,32 @@ console.log(report.state); // inspected | rejected
 console.log(report.totals); // PDFs, imagens, CADs, JSONs e scripts encontrados
 ```
 
-Uma inspeção bem-sucedida apenas informa o conteúdo. Ela **não** aprova o arquivo como desenho, CAD, componente móvel ou vídeo.
+Uma inspeção bem-sucedida informa o conteúdo do pacote, mas não aprova o arquivo como desenho, CAD, componente móvel ou vídeo.
 
-## Resultados e honestidade de escopo
+## Estado e limites
 
-O sistema interno teve validações de índice local, conversão CAD rastreável, prévias, comparação visual, bloqueios de apresentação, tarefa agendada e acesso em rede local. Esta publicação demonstra os padrões técnicos e os controles, mas não reivindica que o leitor tenha acesso à infraestrutura, aos arquivos ou às homologações privadas.
+A versão privada passou por validações de índice local, conversão CAD rastreável, prévias, comparação visual, bloqueios de apresentação, tarefa agendada e acesso em rede local.
 
-Em especial, esta edição não demonstra um vídeo de engenharia aprovado nem afirma que uma animação representa funcionamento físico. Esses resultados exigem fonte técnica adequada e revisão humana responsável.
+A edição pública preserva os padrões técnicos e de segurança, mas não disponibiliza a infraestrutura, os arquivos ou as aprovações privadas. Também não afirma que uma animação representa o funcionamento físico de um equipamento.
 
-## Competências demonstradas
+## Tecnologias e práticas
 
 - Node.js e APIs HTTP locais;
-- segurança de manipulação de arquivos e defesa contra path traversal/zip bomb;
+- segurança no processamento de arquivos e defesa contra path traversal e zip bomb;
 - rastreabilidade por hash e manifestos portáveis;
-- modelagem de fluxos de aprovação humana;
-- UX para usuários não técnicos;
-- arquitetura de conversão CAD e apresentação com limites explícitos;
+- fluxos de aprovação humana;
+- interface para usuários não técnicos;
+- conversão CAD com limites explícitos;
 - testes automatizados e CI;
-- documentação técnica orientada a produto e risco.
+- documentação técnica de produto e risco.
 
 ## Autor
 
 **Maycon Ferreira**
 
-GitHub: [@Mayconxzdev](https://github.com/Mayconxzdev)
+GitHub: [@Mayconxzdev](https://github.com/Mayconxzdev)  
 E-mail: mayconxz00dev@gmail.com
 
 ---
 
-Este repositório é um recorte público de portfólio. Marcas, arquivos, infraestrutura e informações de terceiros não foram incluídos.
+Este repositório é um recorte público. Marcas, arquivos, infraestrutura e informações de terceiros não foram incluídos.
