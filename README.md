@@ -29,7 +29,7 @@ Por isso, organizei o fluxo em quatro partes:
 
 A camada de IA utiliza modelos locais e remotos por meio de **Ollama, Hermes e OpenRouter**, com fallback quando necessário. A indisponibilidade de um modelo não bloqueia as funções principais de organização, conversão e visualização.
 
-As saídas de IA servem como apoio conceitual e visual. Elas não substituem CAD de fabricação, cálculo de engenharia ou aprovação técnica.
+As saídas de IA servem como apoio conceitual e visual. Elas não substituem CAD de fabricação, cálculo de engenharia ou aprovação técnica. Essa fronteira, os riscos de provedores, proveniência e human-in-the-loop estão registrados em [`docs/AI_SYSTEM_CARD.md`](docs/AI_SYSTEM_CARD.md).
 
 Na versão privada, a conversão usa **FreeCAD, Blender e Assimp**, escolhendo alternativas conforme o formato e a estrutura do arquivo. A edição pública não distribui executáveis, arquivos técnicos ou integrações empresariais.
 
@@ -50,7 +50,7 @@ Na versão privada, a conversão usa **FreeCAD, Blender e Assimp**, escolhendo a
 - implementação Node.js para inventário seguro de ZIP, TAR e JSON;
 - redação de manifestos para exportação pública;
 - testes com arquivos sintéticos;
-- documentação de arquitetura, privacidade e limites;
+- documentação de arquitetura, privacidade, IA e limites;
 - CI no GitHub Actions;
 - reconstrução visual sanitizada do fluxo de revisão.
 
@@ -76,7 +76,7 @@ flowchart LR
   F -->|"pendente ou reprovada"| H["Bloqueio\nsem vídeo ou movimento"]
 ```
 
-Leia [docs/architecture.md](docs/architecture.md), [docs/privacy-and-security.md](docs/privacy-and-security.md) e [docs/validation.md](docs/validation.md) para os detalhes.
+Leia [docs/architecture.md](docs/architecture.md), [docs/AI_SYSTEM_CARD.md](docs/AI_SYSTEM_CARD.md), [docs/privacy-and-security.md](docs/privacy-and-security.md) e [docs/validation.md](docs/validation.md) para os detalhes.
 
 ## Executar a edição pública
 
@@ -119,7 +119,7 @@ A edição pública preserva os padrões técnicos e de segurança, mas não dis
 - interface para usuários não técnicos;
 - conversão CAD com limites explícitos;
 - testes automatizados e CI;
-- documentação técnica de produto e risco.
+- documentação técnica de produto, IA e risco.
 
 ## Autor
 
