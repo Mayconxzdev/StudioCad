@@ -1,5 +1,7 @@
 # StudioCad — estação visual para projetos industriais
 
+[Case no portfólio](https://mayconxzdev.github.io/cases/studiocad/)
+
 > Edição pública e sanitizada de um projeto que desenvolvi para organizar referências técnicas, visualizar arquivos e apoiar decisões visuais.
 > **Não inclui documentos, modelos CAD, NAS, IPs, credenciais ou dados de qualquer empresa.**
 
